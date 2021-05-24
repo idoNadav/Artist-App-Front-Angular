@@ -1,0 +1,36 @@
+
+<app-navbar></app-navbar>
+<div class="bg-img">
+  <div class="details">
+    <header class="form_title">Add Artist</header>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <form class="log_in_form" id="log_in_form">
+          <div class="field">
+            <input type="text" name='fullName' placeholder="Full Name" required [(ngModel)]="artist.name"/>
+          </div>
+
+          <div class="field space">
+            <input type="text" name='id' className="pass-key" placeholder="Id" required [(ngModel)]="artist.id"/>
+          </div>
+
+          <div class="field space">
+            <input type="text" name='yearOfBirth' className="pass-key" placeholder="Year Of Birth" required [(ngModel)]="artist.yearOfBirth"/>
+          </div>
+
+          <div class="field space">
+            <input type="text" name='picture link' className="pass-key" placeholder="Picture Link" required [(ngModel)]="artist.pictureLink"/>
+          </div>
+
+          <div class="buttons">
+            <button (click)="saveArtist()"  class="button" style="vertical-align:middle"><span>Add Artist </span></button>
+          </div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+

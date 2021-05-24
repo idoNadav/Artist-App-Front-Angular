@@ -1,0 +1,49 @@
+
+<app-navbar></app-navbar>
+<div class="card-back">
+
+<div class="content">
+  <div class="add-artist-btn">
+    <a  (click)="goToPage('add-artist','add')"class="btn">Add artist</a>
+  </div>
+  <div class="sort">
+    <label class="sort-title">Sort by:</label>
+    <select class="select-sort" [(ngModel)]="selectedField" (change)="sort()">
+      <option disabled selected value="undefined">--Select an Option--</option>
+      <option id="id">Id</option>
+      <option id="Name">Name</option>
+      <option id="Year of birth">Year of birth</option>
+    </select>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutGap="90px" >
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%"  *ngFor="let artist of artists">
+      <mat-card class="mat-elevation-z4" style="margin-bottom: 70px">
+
+        <mat-card-header>
+          <mat-card-title>{{artist.name}}</mat-card-title>
+        </mat-card-header>
+        <img [src]="artist.pictureLink" draggable="false" width="350" height="350">
+
+        <mat-card-content>
+          <p class="mbsc-txt-muted">{{artist.yearOfBirth}}</p>
+          <p class="id">#{{artist._id}}</p>
+
+          <form class="add-song-form" #artistSong="ngForm" (ngSubmit) = "saveSong(artistSong.value, artist._id, artistSong)">
+            <input class="add-song-txt"type="text" required  id="songName{{artist._id}}" name="name" placeholder="song name" ngModel/>
+            <input class="add-song-btn" type="submit" value="Add song" />
+          </form>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button class="delete-btn" (click)="deleteArtist(artist._id)">Delete Artist</button>
+          <a class="playList-btn" href="/play-list/{{artist._id}}">Playlist</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="add-artist-btn">
+    <a  (click)="goToPage('add-artist','add')"class="btn">Add artist</a>
+  </div>
+</div>
+</div>

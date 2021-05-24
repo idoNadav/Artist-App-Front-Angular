@@ -1,0 +1,101 @@
+.content {
+  padding: 80px;
+}
+.mat-elevation-z4{
+  margin-left:50px ;
+  background: rgba(150,195,255,0.1);
+  box-shadow: 2px 2px 28px 1px rgba(0,0,0,0.75);
+}
+
+:host{
+  display: block;
+  background-image: url("https://images.pexels.com/photos/92083/pexels-photo-92083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-position: center;
+  background-size: cover;
+}
+
+.sort{
+  margin-bottom: 60px;
+}
+
+.sort-title{
+  font-size: 20px;
+  position: relative;
+  padding-right: 5px;
+}
+
+.mat-card-title{
+  font-size: 30px;
+  font-weight: 900;
+  font-family: "Monaco", monospace;
+}
+
+.delete-btn
+{
+  background-color: rgb(255, 0, 0);
+  border: 2px;
+  border-radius: 5px;
+  color: white;
+  width: 100px;
+  height: 30px;
+}
+
+.delete-btn:hover {
+  background-color: brown;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.playList-btn{
+  text-decoration: none;
+  margin-left: 43%;
+}
+
+.playList-btn{
+  border: 2px solid #006600;
+  border-radius: 5px;
+  background-color: #009900;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px 10px 20px;
+  display: inline-block;
+}
+.playList-btn:hover {
+  border: 2px solid #009900;
+  background-color: #00cc00;
+}
+.playList-btn:visited{
+  background-color: darkgreen;
+}
+
+.add-song-btn{
+  margin-left:0.5%;
+}
+
+.add-artist-btn{
+  margin-top: 2%;
+  margin-left:50%;
+  margin-right: 25%;
+}
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  color: #111111;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  border-radius: 50%;
+  border: double 4px darkcyan;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: .6s;
+}
+
+.btn:hover{
+  -webkit-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+

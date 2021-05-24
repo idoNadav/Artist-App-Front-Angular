@@ -1,0 +1,61 @@
+
+*{
+  font-weight: bold;
+}
+
+:host{
+  display: block;
+  background-image: url("https://images.pexels.com/photos/92083/pexels-photo-92083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-position: center;
+  background-repeat: space;
+  background-size: cover;
+}
+
+.main-play-list{
+  width: 95vw;
+  height: 100vh;
+}
+
+.table-data{
+  width: 450px;
+  font-size: 15px;
+  margin-left: 50%;
+  margin-top: 20%;
+  margin-right: 25%;
+}
+
+.w3-table{
+  font-size: 13px;
+  border-radius: 20px;
+  transform: translate(-50%,-50%);
+  background: rgba(150,195,255,0.2);
+  box-shadow: 5px 2px 28px 0px rgba(0,0,0,0.75);
+
+}
+
+.w3-table td {
+  padding: 15px;
+  text-align: center;
+
+}
+
+.table-head{
+  font-size: 20px;
+
+}
+
+.delete-btn-table {
+  background-color: rgb(255, 0, 0);
+  transition: ease-in-out 0.5s;
+  border-radius: 20px;
+  color: white;
+  border: 0px;
+  width: 100px;
+  height: 30px;
+}
+
+.delete-btn-table:hover {
+  background-color: brown;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+

@@ -5,7 +5,7 @@
     <header class="form_title">Add Artist</header>
     <div class="submit-form">
       <div *ngIf="!submitted">
-        <form class="log_in_form" id="log_in_form">
+        <form class="log_in_form" id="log_in_form" #addArtistForm="ngForm">
           <div class="field">
             <input type="text" name='fullName' placeholder="Full Name" required [(ngModel)]="artist.name"/>
           </div>
@@ -23,13 +23,11 @@
           </div>
 
           <div class="buttons">
-            <button (click)="saveArtist()"  class="button" style="vertical-align:middle"><span>Add Artist </span></button>
+            <button (click)="saveArtist(addArtistForm)"  class="button" style="vertical-align:middle"><span>Add Artist </span></button>
           </div>
 
         </form>
       </div>
-
-
     </div>
   </div>
 </div>

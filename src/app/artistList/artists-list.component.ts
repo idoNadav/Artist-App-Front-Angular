@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ArtistService } from 'src/app/services/artist.service';
 import {ArtistModel} from '../Models/ArtistModel';
-import {Router, RouterModule, Routes} from '@angular/router';
 
 @Component({
   selector: 'app-artists-list',
@@ -43,7 +42,6 @@ export class ArtistsListComponent implements OnInit{
   refreshList(): void {
     this.retrieveArtists();
   }
-
 
   saveSong(song: any, artistId: any, artistSong: NgForm): void {
     const data = {

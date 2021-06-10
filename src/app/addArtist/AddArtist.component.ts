@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ArtistService} from '../services/artist.service';
 import { RouterModule, Routes } from '@angular/router';
 import {error} from '@angular/compiler/src/util';
+import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-add-artist',
   templateUrl: './AddArtist.component.html',
@@ -18,13 +19,12 @@ export class AddArtistComponent implements OnInit {
   };
 
   submitted = false;
-
   constructor(private artistService: ArtistService , router: RouterModule) { }
 
   ngOnInit(): void {
   }
 
-  saveArtist(): void {
+  saveArtist(addArtistForm: NgForm): void {
     const data = {
       name: this.artist.name,
       id: this.artist.id,
@@ -36,7 +36,7 @@ export class AddArtistComponent implements OnInit {
         response => console.log(response),
         err => alert(err.error)
       );
-    location.reload();
+    addArtistForm.reset();
   }
 
   newArtist(): void {
@@ -48,6 +48,4 @@ export class AddArtistComponent implements OnInit {
       pictureLink: ''
     };
   }
-
-
 }

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ArtistService} from '../services/artist.service';
-import { RouterModule, Routes } from '@angular/router';
-import {error} from '@angular/compiler/src/util';
 import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-add-artist',
@@ -10,7 +8,6 @@ import {NgForm} from '@angular/forms';
 })
 
 export class AddArtistComponent implements OnInit {
-
   artist = {
     name: '',
     id: '',
@@ -19,7 +16,7 @@ export class AddArtistComponent implements OnInit {
   };
 
   submitted = false;
-  constructor(private artistService: ArtistService , router: RouterModule) { }
+  constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
   }

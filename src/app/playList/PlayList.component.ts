@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ArtistService} from '../services/artist.service';
-import { RouterModule, Routes , ActivatedRoute } from '@angular/router';
+import {ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-play-list',
@@ -11,12 +11,9 @@ import { RouterModule, Routes , ActivatedRoute } from '@angular/router';
 
 export class PlayListComponent implements OnInit {
 
-
   songs: any;
 
-  constructor(private artistService: ArtistService,
-              public route: ActivatedRoute) {
-  }
+  constructor(private artistService: ArtistService, public route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.retrieveSongs();
@@ -24,8 +21,8 @@ export class PlayListComponent implements OnInit {
 
   retrieveSongs(): void {
     this.artistService.getSongsByArtist(this.route.snapshot.params.artistId).subscribe(data => {
-      this.songs = data;
-      console.log(data);
+    this.songs = data;
+    console.log(data);
     });
   }
 

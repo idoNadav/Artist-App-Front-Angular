@@ -69,22 +69,23 @@
 }
 
 .add-song-btn{
-  margin-left:0.5%;
+  margin-left: 0.5%;
 }
 
 .add-artist-btn{
-  margin-top: 2%;
+  margin-top: 1%;
   margin-left:50%;
   margin-right: 25%;
 }
 
 .btn{
+  font-size: 14px;
   display: inline-block;
   text-decoration: none;
   color: #111111;
-  width: 90px;
+  width: 100px;
   height: 90px;
-  line-height: 90px;
+  line-height: 80px;
   border-radius: 50%;
   border: double 4px darkcyan;
   text-align: center;

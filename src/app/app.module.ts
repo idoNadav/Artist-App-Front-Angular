@@ -15,6 +15,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   { path: 'add-artist', component: AddArtistComponent }
@@ -40,7 +41,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule,
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule]

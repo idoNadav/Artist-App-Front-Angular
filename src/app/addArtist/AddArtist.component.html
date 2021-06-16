@@ -6,24 +6,59 @@
     <div class="submit-form">
       <div *ngIf="!submitted">
         <form class="log_in_form" id="log_in_form" #addArtistForm="ngForm">
+
           <div class="field">
-            <input type="text" name='fullName' placeholder="Full Name" required [(ngModel)]="artist.name"/>
+            <input placeholder="Full Name" type="text" id="name" name="name" class="form-control" required [(ngModel)]="artist.name" #name="ngModel">
+          </div>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-input">
+            <small class="error-input" *ngIf="name.errors?.required && name.touched">
+              *Name is required
+            </small>
           </div>
 
-          <div class="field space">
-            <input type="text" name='id' className="pass-key" placeholder="Id" required [(ngModel)]="artist.id"/>
-          </div>
 
           <div class="field space">
-            <input type="text" name='yearOfBirth' className="pass-key" placeholder="Year Of Birth" required [(ngModel)]="artist.yearOfBirth"/>
+            <input placeholder="Id" type="text" id="id" name="id" class="form-control" required pattern="[0-9]*" [(ngModel)]="artist.id" #id="ngModel">
+          </div>
+          <div *ngIf="id.invalid && (id.dirty || id.touched)" class="error-input">
+            <small class="error-input" *ngIf="id.errors?.required && id.touched">
+              *Id is required.
+            </small>
+            <small class="error-input" *ngIf="id.errors?.pattern">
+              *Id must be contain only numbers
+            </small>
           </div>
 
+
           <div class="field space">
-            <input type="text" name='picture link' className="pass-key" placeholder="Picture Link" required [(ngModel)]="artist.pictureLink"/>
+            <input placeholder="Year Of Birth" type="text" id="Year Of Birth" name="yearOfBirth" class="form-control" required pattern="[0-9]*"
+                   minlength="4" maxlength="4" [(ngModel)]="artist.yearOfBirth" #yearOfBirth="ngModel">
+          </div>
+          <div *ngIf="yearOfBirth.invalid && (yearOfBirth.dirty || yearOfBirth.touched)" class="error-input">
+            <small class="error-input" *ngIf="yearOfBirth.errors?.required && yearOfBirth.touched">
+              *Year of birth is required.
+            </small>
+            <small class="error-input" *ngIf="yearOfBirth.errors?.pattern">
+              *Year of birth must be contain only numbers
+            </small>
+            <small class="error-input" *ngIf="yearOfBirth.errors?.minlength || yearOfBirth.errors?.maxlength">
+              *Year of birth must contain 4 digits
+            </small>
+          </div>
+
+
+          <div class="field space">
+            <input placeholder="Picture Link" type="text" id="Picture Link" name="Picture Link" class="form-control" required
+                   [(ngModel)]="artist.pictureLink" #pictureLink="ngModel">
+          </div>
+          <div *ngIf="pictureLink.invalid && (pictureLink.dirty || pictureLink.touched)" class="error-input">
+            <small class="error-input" *ngIf="pictureLink.errors?.required && pictureLink.touched">
+              *Picture link is required.
+            </small>
           </div>
 
           <div class="buttons">
-            <button (click)="saveArtist(addArtistForm)"  class="button" style="vertical-align:middle"><span>Add Artist </span></button>
+            <button [disabled]="addArtistForm.invalid" type="submit" (click)="saveArtist(addArtistForm)" class="button" style="vertical-align:middle"><span>Add Artist </span></button>
           </div>
 
         </form>
@@ -31,4 +66,5 @@
     </div>
   </div>
 </div>
+
 

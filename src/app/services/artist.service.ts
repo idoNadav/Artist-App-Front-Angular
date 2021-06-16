@@ -20,8 +20,8 @@ export class ArtistService {
     return this.http.get(baseUrl + 'getArtist/' + artistId);
   }
 
-  addArtist(data: any): Observable<any> {
-    return this.http.post(baseUrl + 'addArtist', data);
+  addArtist(data: any): Promise<any>{
+    return this.http.post(baseUrl + 'addArtist', data).toPromise();
   }
 
   getAllSongs(): Promise<any> {

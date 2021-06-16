@@ -27,12 +27,11 @@ export class ArtistsListComponent implements OnInit{
   }
 
   retrieveArtists(): void {
-    this.artistsService.getArtists().then(data => {
+      this.artistsService.getArtists().then(data => {
       this.artists = data;
       this.artistList = data;
       console.log(data);
-    })
-      .catch(error => {
+    }).catch(error => {
         alert('Failed to get artists data');
         window.open('/', '_self');
         console.log(error);

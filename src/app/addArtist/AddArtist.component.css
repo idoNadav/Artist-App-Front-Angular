@@ -1,8 +1,7 @@
 
 :host{
-  width: 98vw;
-  height: 99vh;
-  background: blue;
+  width: 100vw;
+  height: 100vh;
   display: block;
   background-image: url("https://images.pexels.com/photos/92083/pexels-photo-92083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-position: center;
